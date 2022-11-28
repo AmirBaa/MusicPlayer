@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player of the Continent</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://kit.fontawesome.com/50480b67f2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="player-container">
+        <!-- Song -->
+        <div class="img-container">
+            <img src="img/jacinto-1.png" alt="Album Art">
+        </div>
+        <h2 id="title">Witcher world chill</h2>
+        <h3 id="artist">Geralt of Rivia</h3>
+        <audio src="music/jacinto-1.mp3"></audio>
+        <!-- Progress -->
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="duration-wrapper">
+                <span id="current-time">0:00</span>
+                <span id="duration">04:08</span>
+            </div>
+        </div>
+        <!-- Controls -->
+        <div class="player-controls">
+            <i class="fas fa-backward" id="prev" title="Previous"></i>
+            <i class="fas fa-play main-button" id="play" tittle="Play"></i>
+            <i class="fas fa-forward" id="next" title="Next"></i>
+        </div>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
