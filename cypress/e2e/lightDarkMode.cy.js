@@ -1,11 +1,11 @@
 /// <reference types="cypress" />
 
-describe('End to end testing of Light-Dark Mode site', () => {
+describe('Light-Dark Mode', () => {
     beforeEach(() => {
         cy.visit('http://127.0.0.1:5500/')
     })
 
-    it('Testing first song and functionalities', () => {
+    it('test first song and functionalities', () => {
         cy.get('img').should('have.attr', 'src', 'img/jacinto-1.png').and('have.css', 'height', '300px').and('have.css', 'width', '300px')
         cy.get('#play').click()
         cy.get('#play').should('have.attr', 'title', 'Pause')
@@ -13,10 +13,8 @@ describe('End to end testing of Light-Dark Mode site', () => {
         cy.get('#artist').should('have.text', 'Geralt of Rivia')
         cy.get('#play').click()
         cy.get('#play').should('have.attr', 'title', 'Play')
-
-
     })
-    it('Testing second song and functionalities', () => {
+    it('test second song and functionalities', () => {
         cy.get('#next').click()
         cy.get('img').should('have.attr', 'src', 'img/jacinto-2.png').and('have.css', 'height', '300px').and('have.css', 'width', '300px')
         cy.get('#play').click()
@@ -25,15 +23,13 @@ describe('End to end testing of Light-Dark Mode site', () => {
         cy.get('#artist').should('have.text', 'Geralt of Rivia')
         cy.get('#play').click()
         cy.get('#play').should('have.attr', 'title', 'Pause')
-
-
     })
-    it('Testing third song and backwards buttons', () => {
+    it('test third song and backwards buttons', () => {
         cy.get('#prev')
         cy.get('#prev')
         cy.get('img').should('have.attr', 'src', 'img/jacinto-1.png').and('have.css', 'height', '300px').and('have.css', 'width', '300px')
     })
-    it('Testing progress bar', () => {
+    it('test progress bar', () => {
         cy.get('#play').click()
         cy.get('#progress-container').then($bar => {
             const fullWidth = $bar.width();
@@ -43,5 +39,4 @@ describe('End to end testing of Light-Dark Mode site', () => {
         cy.get('#current-time').should("contain", "2:03")
         cy.get("#progress").should("have.attr", "style", "width: 50%;")
     })
-
 })
